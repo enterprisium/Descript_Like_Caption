@@ -9,7 +9,7 @@ import ffmpeg
 from IPython.display import Audio
 
 
-Audiofilename = "demo audio.mp3"
+Audiofilename = "Learning English Story.mp3"
 
 model = whisper.load_model("medium")
 result = model.transcribe(Audiofilename,word_timestamps=True)
@@ -74,7 +74,7 @@ def split_text_into_lines(data):
 linelevel_subtitles = split_text_into_lines(wordlevel_info_modified)
 for line in linelevel_subtitles:
   json_str = json.dumps(line, indent=4)
-def create_caption(textJSON, framesize, font="Montserrat-Bold", fontsize=25, color='white', bgcolor='red'):
+def create_caption(textJSON, framesize, font="Montserrat-Bold", fontsize=45, color='Black', bgcolor='white'):
     wordcount = len(textJSON['textcontents'])
     full_duration = textJSON['end'] - textJSON['start']
     word_clips = []
@@ -148,4 +148,4 @@ background_image = ImageClip(image_path, duration=input_audio_duration)
 final_video = CompositeVideoClip([background_image] + all_linelevel_splits)
 final_video = final_video.set_audio(input_audio)
 
-final_video.write_videofile("output1.mp4", fps=24, codec="libx264", audio_codec="aac")
+final_video.write_videofile("Kids Story.mp4", fps=24, codec="libx264", audio_codec="aac")
