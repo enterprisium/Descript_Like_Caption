@@ -1,5 +1,7 @@
 import ffmpeg
 
+# pip install ffmpeg-python
+
 mp4videoURL = "John's Good Habit.mp4"
 videofilename = mp4videoURL.split('/')[-1]
 audiofilename = videofilename.replace(".mp4",'.mp3')
