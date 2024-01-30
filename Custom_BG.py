@@ -13,6 +13,7 @@ from IPython.display import Audio
 
 
 """
+Python version python-3.9.13-amd64
 We have to install openai-whisper, not WHISPER!!!
 """
 
